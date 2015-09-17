@@ -83,7 +83,7 @@ public class BlogController {
 	public static void main(String[] args) throws IOException {
 		
 		if (args.length == 0) {
-			new BlogController("mongodb://mongoadmin:Welcome1@ds027799.mongolab.com:27799/blog");
+			new BlogController("mongodb://localhost");
 		} else {
 			new BlogController(args[0]);
 		}
@@ -109,6 +109,8 @@ public class BlogController {
 
 	}
 
+	
+	//Email configuration is initialized here..
 	static class EmailInit {
 
 		public static Session initEmail() {
@@ -116,6 +118,7 @@ public class BlogController {
 			Properties props = new Properties();
 
 			try {
+				//mail configuration settings are loaded here
 				props.load(new FileInputStream(new File("settings.properties")));
 			} catch (FileNotFoundException e2) {
 				e2.printStackTrace();
@@ -123,13 +126,14 @@ public class BlogController {
 				e1.printStackTrace();
 			}
 
+			//give your gmail credentials here
 			 session = Session.getDefaultInstance(props,
 					new Authenticator() {
 
 						protected PasswordAuthentication getPasswordAuthentication() {
 
 							return new PasswordAuthentication(
-									"harshavmb@gmail.com", "Bhaskar@143");
+									"xxxxx@gmail.com", "********");
 
 						}
 

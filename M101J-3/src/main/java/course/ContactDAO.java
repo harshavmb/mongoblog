@@ -14,6 +14,7 @@ public class ContactDAO {
 		contactCollection = blogDatabase.getCollection("contact");
 	}
 	
+	//contact query added to database
 	public boolean addQuery(String name,String email, String message){
 		
 		Document contact = new Document();

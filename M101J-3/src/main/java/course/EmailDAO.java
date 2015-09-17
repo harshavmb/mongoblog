@@ -15,6 +15,7 @@ public class EmailDAO {
 		emailsCollection = blogDatabase.getCollection("emails");
 	}
 	
+	//email data fetched from emailsCollection
 	public Document getEmailData(String emailType){
 		Document email;
 		
